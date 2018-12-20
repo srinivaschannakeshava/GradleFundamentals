@@ -1,0 +1,31 @@
+task copyImage(type:Copy){
+    from 'from'
+    into 'dest'
+}
+
+task copyAndRename(type:Copy){
+    from 'from'
+    into 'dest'
+    rename '(.*)','renamed.jpg'
+}
+
+task copyWithExclude (type:Copy){
+    from 'from'
+    into 'dest'
+    exclude '*.jpg'
+}
+
+task clearDirectory(type:Delete){
+    println "Clearing directory!!"
+    delete 'dest'
+}
+
+def spec =copySpec{
+    from 'from'
+    into 'dest'
+    rename '(.*)','withSpec.jpg'
+}
+
+copyImage.dependsOn clearDirectory;
+copyAndRename.dependsOn clearDirectory;
+copyWithExclude.dependsOn clearDirectory;

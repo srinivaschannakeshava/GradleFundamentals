@@ -1,0 +1,34 @@
+def projectVersion= "2.0"
+task Task1{
+    doLast{
+        println (" HEllo task 1!")
+    }
+}
+
+Task1.description = "Task 1 description"
+
+task Task2 << {  println (" HEllo task 2!") }
+
+task Task3 { 
+     description "this is task 3"
+
+     doLast{
+      println (" HEllo task 3!")
+     }
+  }
+
+Task3.dependsOn Task2  
+
+Task2.dependsOn Task1
+
+task Task4 {
+    description "this is task 4"
+    dependsOn Task2
+    doFirst{
+        println "Do First Task 4 version : $projectVersion"
+    }
+    doLast{
+        println "Do last Task 4"
+    }
+}
+        

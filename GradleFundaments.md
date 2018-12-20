@@ -27,6 +27,31 @@
 > ```
 > provides certain tasks ex:- assemble, build, compile , clean, jar
 
+- Defining and using tasks
+    - Tasks
+        - has a lifecycle
+        - has properties
+        - has actions
+            - firstAction
+            - lastAction
+            - has dependencies
+- Build Phases
+    1. Init phase 
+    2. Configuration phase - ex: description
+    3. Execution phase - ex: doFirst,doLast
+
+- Task Dependencies
+    - dependsOn
+    - mustRunAfter
+    - shouldRunAfter
+    - finalizedBy
+- Typed Tasks 
+    - Mainly for creating reussable tasks
+    - Generic tasks already part of gradle.
+    - Its used by injecting into the task 
+- Building Java Project
+    - ``gradle --daemon build `` - this runs a gradle deamon uses the existing running jvm for building reducing the process time 
+
 ### Gradle commands
 - ``` gradle tasks  ``` - lists the tasks available
--
+- ``` gradle -i taskName ``` - run in info mode
