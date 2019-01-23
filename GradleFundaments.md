@@ -87,3 +87,4 @@
 - ``` gradle -q dependencies ``` - lists the dependency libs
 - ``` gradle -q dependencies -configuration compile ``` - dependency w.r.t specific configuration
 
+### Gradle build script  
