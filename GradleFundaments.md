@@ -88,3 +88,4 @@
 - ``` gradle -q dependencies -configuration compile ``` - dependency w.r.t specific configuration
 
 ### Gradle build script  
+The build script acts as a base configuration for the gradle.build file
